@@ -1,2 +1,2 @@
 
-[{"pk": 1, "model": "products.product", "fields": {"name": "", "description": "", "price": , "category": 1, "width": "","height": "", "image": "", "quantity": ""}},]
+[{"pk": 1, "model": "works.work", "fields": {"name": "", "description": "", "price": , "category": 1, "width": "","height": "", "image": "", "quantity": ""}},]
