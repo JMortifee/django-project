@@ -5,6 +5,12 @@ class Category(models.Model):
     name = models.CharField(max_length=254)
     friendly_name = models.CharField(max_length=254, null=True, blank=True)
 
+    class Meta:
+        verbose_name_plural = 'Categories'
+        
+    name = models.CharField(max_length=254)
+    friendly_name = models.CharField(max_length=254, null=True, blank=True)
+
     def __str__(self):
         return self.name
 
@@ -17,8 +23,10 @@ class Product(models.Model):
     name = models.CharField(max_length=254)
     description = models.TextField()
     price = models.DecimalField(max_digits=6, decimal_places=2)
-    size = models.DecimalField(max_digits=6, decimal_places=2)
+    width = models.DecimalField(max_digits=6, decimal_places=0)
+    height = models.DecimalField(max_digits=6, decimal_places=0)
     image = models.ImageField(null=True, blank=True)
+    quantity = models.DecimalField(max_digits=6, decimal_places=0)
 
     def __str__(self):
         return self.name
