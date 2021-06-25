@@ -26,7 +26,7 @@
                             <div class="card h-100 border-0">
                                 {% if product.image %}
                                 <a href="">
-                                    <img class="card-img-top img-fluid" src="{{ product.image.url }}" alt="{{ product.name }}">
+                                    <img class="card-img-top img-fluid" src="{{ product.image }}" alt="{{ product.name }}">
                                 </a>
                                 {% else %}
                                 <a href="">
@@ -39,9 +39,18 @@
                                 <div class="card-footer bg-white pt-0 border-0 text-left">
                                     <div class="row">
                                         <div class="col">
-                                            <p class="lead mb-0 text-left font-weight-bold">${{ product.price }}</p>
+                                            {% if product.qauntity == 0 %}
+                                                <p class="lead mb-0 text-left font-weight-bold">SOLD!</p>
+
+                                            {% else %}
+                                                <p class="lead mb-0 text-left font-weight-bold">£{{ product.price }}</p>
+                                            {% endif %}
+
                                             <small class="text-muted"><i class="fas fa-star mr-1"></i>{{ product.width }}mm x {{ product.height }}mm</small>
-                                            
+
+                                            {% if product.category == 2 %}
+                                                <p class="lead mb-0 text-left font-weight-bold">Only {{ product.quantity }} left</p>
+                                            {% endif %}
                                         </div>
                                     </div>
                                 </div>
@@ -53,7 +62,7 @@
                             </div>
                         {% endif %}                        
                         {% if forloop.counter|divisibleby:2 %}
-                            <div class="col-12 d-none d-sm-block d-md-block d-lg-none mb-5">
+                            <div class="col-12 d-none d-sm-block d-md-block mb-5">
                                 <hr>
                             </div>
                         {% endif %}
