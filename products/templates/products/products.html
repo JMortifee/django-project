@@ -2,19 +2,7 @@
 {% load static %} 
 
 {% block content %} 
-    <div class="row bg-white">
-        <nav class="navbar navbar-expand-lg navbar-light w-100">
-            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#products-nav" aria-controls="products-nav" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            {% include 'products/includes/products-nav.html' %}
-        </nav>
-    </div>
-    <div id="delivery-banner" class="row text-center">
-        <div class="col bg-black text-white">
-            <h4 class="logo-font my-1">works</h4>                
-        </div>            
-    </div>
+    
 
     <div class="container-fluid">
         <div class="row">
@@ -22,11 +10,12 @@
                 <div class="row mt-1 mb-2"></div>
                 <div class="row">
                     {% for product in products %}
-                        <div class="col-sm-12 col-md-6">
+                        <div class="col-sm-12 col-md-6 ">
                             <div class="card h-100 border-0">
                                 {% if product.image %}
-                                <a href="">
+                                <a href="{% url 'product_detail' product.id %}">
                                     <img class="card-img-top img-fluid" src="{{ MEDIA_URL }}{{ product.image }}" alt="{{ product.name }}">
+
                                 </a>
                                 {% else %}
                                 <a href="">
@@ -35,37 +24,12 @@
                                 {% endif %}
                                 <div class="card-body pb-0">
                                     <p class="mb-0">{{ product.name }}</p>
-                                </div>
-                                <div class="card-footer bg-white pt-0 border-0 text-left">
-                                    <div class="row">
-                                        <div class="col">
-                                            {% if product.qauntity == 0 %}
-                                                <p class="lead mb-0 text-left font-weight-bold">SOLD!</p>
-
-                                            {% else %}
-                                                <p class="lead mb-0 text-left font-weight-bold">£{{ product.price }}</p>
-                                            {% endif %}
-
-                                            <small class="text-muted"><i class="fas fa-star mr-1"></i>{{ product.width }}mm x {{ product.height }}mm</small>
-
-                                            {% if product.category == 2 %}
-                                                <p class="lead mb-0 text-left font-weight-bold">Only {{ product.quantity }} left</p>
-                                            {% endif %}
-                                        </div>
-                                    </div>
+                                    <p class="mb-0 text-muted">{{ product.date }}</p>
+                                    <p class="mb-0 text-muted">{{ product.description }}</p>
+                                    <p class="text-muted">{{ product.width }}mm x {{ product.height }}mm</p>
                                 </div>
                             </div>
                         </div>
-                        {% if forloop.counter|divisibleby:1 %}
-                            <div class="col-12 d-sm-none mb-5">
-                                <hr>
-                            </div>
-                        {% endif %}                        
-                        {% if forloop.counter|divisibleby:2 %}
-                            <div class="col-12 d-none d-sm-block d-md-block mb-5">
-                                <hr>
-                            </div>
-                        {% endif %}
                     {% endfor %}
                 </div>
             </div>

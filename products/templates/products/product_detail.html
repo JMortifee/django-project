@@ -1,0 +1,52 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block page_header %}
+    <div class="container header-container">
+        <div class="row">
+            <div class="col"></div>
+        </div>
+    </div>
+{% endblock %}
+
+{% block content %}
+    <div class="container-fluid ">
+        <div class="row">
+            <div class="col-12">
+                <div class="d-flex justify-content-center mt-5">
+                    <h3>{{ product.name }}</h3>
+                </div>
+                <div class="col-lg-6 image-container my-5 offset-lg-3">
+                    {% if product.image %}
+                        <a href="{{ product.image }}" target="_blank">
+                            <img class="card-img-top img-fluid" src="{{ MEDIA_URL }}{{ product.image }}" alt="{{ product.name }}">
+                        </a>
+                        {% else %}
+                        <a href="">
+                            <img class="card-img-top img-fluid" src="{{ MEDIA_URL }}noimage.png" alt="{{ product.name }}">
+                        </a>
+                    {% endif %}
+                </div>
+            </div>
+            <div class="col-12 col-md-6 col-lg-4 offset-lg-2 offset-md-3">
+                <div class="card-footer bg-white pt-0 border-0 text-left">
+                    <div class="row">
+                        <div class="card-body pb-0">
+                            <p class="mb-0">{{ product.name }}</p>
+                            <p class="mb-0 text-muted">{{ product.date }}</p>
+                            <p class="mb-0 text-muted">{{ product.description }}</p>
+                            <p class="text-muted">{{ product.width }}mm x {{ product.height }}mm</p>
+                            {% if product.quantity == 0 %}
+                                <h4 class="mb-0">Sold!</h4>
+                            
+                        {% else %}
+                                <h4 class="mb-0">£{{ product.price }}</h4>
+                        {% endif %}
+                        </div>
+                        
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}

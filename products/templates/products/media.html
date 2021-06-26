@@ -1,0 +1,46 @@
+{% extends "base.html" %} 
+{% load static %} 
+
+{% block content %} 
+
+    <div class="container-fluid mt-5">
+        <div class="row">
+            <div class="product-container col-10 offset-1">
+                <div class="row mt-1 mb-2"></div>
+                <div class="row">
+                        <div class="col-sm-12 col-md-4">
+                            <div class="card h-100 border-0">
+                                <a href="">
+                                    <img class="card-img-top img-fluid" src="{{ MEDIA_URL }}DSCF3037.jpg" alt="{{ product.name }}">
+                                </a>
+                                <div class="card-body pb-0 mb-0">
+                                    <p class="">Paintings</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-sm-12 col-md-4">
+                            <div class="card h-100 border-0">
+                                <a href="">
+                                    <img class="card-img-top img-fluid" src="{{ MEDIA_URL }}DSCF3037.jpg" alt="{{ product.name }}">
+                                </a>
+                                <div class="card-body pb-0 mb-0">
+                                    <p class="">Prints</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-sm-12 col-md-4">
+                            <div class="card h-100 border-0">
+                                <a href="">
+                                    <img class="card-img-top img-fluid" src="{{ MEDIA_URL }}DSCF3037.jpg" alt="{{ product.name }}">
+                                </a>
+                                <div class="card-body pb-0 mb-0">
+                                    <p class="">Drawings</p>
+                                </div>
+                            </div>
+                        </div>
+                        
+                </div>
+            </div>
+        </div>
+
+{% endblock %}
