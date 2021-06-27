@@ -53,6 +53,10 @@ body {
     cursor: pointer;
 }
 
+.hidden {
+    display: none;
+}
+
 /* --------------------------------- Media queries */
 
 /* Slightly larger container on xl screens */
