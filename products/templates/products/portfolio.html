@@ -5,11 +5,10 @@
     <div class="container-fluid">
         <div class="row mt-5">
             <div class="product-container col-10 offset-1">
-                <div class="row mt-1 mb-2"></div>
                 <div class="row">
                         <div class="col-sm-12 col-md-6">
                             <div class="card h-100 border-0">
-                                <a href="{% url 'media' %}">
+                                <a href="{% url 'media' %}?date=2021">
                                     <img class="card-img-top img-fluid" src="{{ MEDIA_URL }}DSCF3037.jpg" alt="{{ product.name }}">
                                 </a>
                                 <div class="card-body pb-0 mb-0">
@@ -19,7 +18,7 @@
                         </div>
                         <div class="col-sm-12 col-md-6">
                             <div class="card h-100 border-0">
-                                <a href="">
+                                <a href="{% url 'media' %}?date=2020">
                                     <img class="card-img-top img-fluid" src="{{ MEDIA_URL }}DSCF3037.jpg" alt="{{ product.name }}">
                                 </a>
                                 <div class="card-body pb-0 mb-0">
@@ -29,7 +28,7 @@
                         </div>
                         <div class="col-sm-12 col-md-6">
                             <div class="card h-100 border-0">
-                                <a href="">
+                                <a href="{% url 'media' %}?date=2019">
                                     <img class="card-img-top img-fluid" src="{{ MEDIA_URL }}DSCF3037.jpg" alt="{{ product.name }}">
                                 </a>
                                 <div class="card-body pb-0">
@@ -39,7 +38,7 @@
                         </div>
                         <div class="col-sm-12 col-md-6">
                             <div class="card h-100 border-0">
-                                <a href="">
+                                <a href="{% url 'media' %}?date=2018">
                                     <img class="card-img-top img-fluid" src="{{ MEDIA_URL }}DSCF3037.jpg" alt="{{ product.name }}">
                                 </a>
                                 <div class="card-body pb-0">
@@ -49,7 +48,7 @@
                         </div>
                         <div class="col-sm-12 col-md-6">
                             <div class="card h-100 border-0">
-                                <a href="">
+                                <a href="{% url 'media' %}?date=2017">
                                     <img class="card-img-top img-fluid" src="{{ MEDIA_URL }}DSCF3037.jpg" alt="{{ product.name }}">
                                 </a>
                                 <div class="card-body pb-0">
@@ -58,6 +57,8 @@
                             </div>
                         </div>
                 </div>
+            </div>
+            <div class="col-sm-6 col-md-4 col-lg-2 offset-sm-3 offset-md-4 offset-lg-5 pb-5 text-center"><a href="{% url 'media' %}?date=2017,2018,2019,2020,2021" class="btn btn-submit">View all Years</a>
             </div>
         </div>
 

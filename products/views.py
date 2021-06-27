@@ -1,5 +1,7 @@
 from django.shortcuts import render, get_object_or_404
-from .models import Product
+from django.contrib import messages
+from django.db.models import Q
+from .models import Product, Category
 
 # Create your views here.
 
@@ -19,8 +21,21 @@ def all_products(request):
 
     products = Product.objects.all()
 
+    categories = None
+
+    if request.GET:
+        if 'category' in request.GET:
+            categories = request.GET['category'].split(',')
+            cat = products.filter(category__name__in=categories)
+            if 'date' in request.GET:
+                dates = request.GET['date'].split(',')
+                date = cat.filter(date__in=dates)
+            
+
+
     context = {
-        'products': products,
+        'cat': cat,
+        'date' : date
     }
 
     return render(request, 'products/products.html', context)
