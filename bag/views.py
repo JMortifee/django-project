@@ -2,7 +2,6 @@ from django.shortcuts import (
     render, redirect, reverse, HttpResponse, get_object_or_404
 )
 from django.contrib import messages
-
 from products.models import Product
 
 # Create your views here.
@@ -22,13 +21,13 @@ def add_to_bag(request, item_id):
     bag = request.session.get('bag', {})
     if item_id in list(bag.keys()):
         if bag[item_id] == stock :
-            # below statement need to return a message saying no more available
-            messages.success(request, f'This item is already in your basket, or there are no more available')
+            messages.info(request, f'This item is already in your basket, or there are no more available')
             return redirect(redirect_url)
         else:
             bag[item_id] += quantity
     else:
         bag[item_id] = quantity
+    messages.success(request, f'Added {product.name} to your bag')
     request.session['bag'] = bag
     return redirect(redirect_url)
 
