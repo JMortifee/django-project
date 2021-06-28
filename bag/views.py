@@ -13,13 +13,11 @@ def add_to_bag(request, item_id):
 
     product = Product.objects.get(pk=item_id)
     quantity = int(request.POST.get('quantity'))
-    q = product.quantity
+    stock = product.quantity
     redirect_url = request.POST.get('redirect_url')
     bag = request.session.get('bag', {})
     if item_id in list(bag.keys()):
-        if bag[item_id] == q :
-            print('no more available')
-            print(request.session['bag'])
+        if bag[item_id] == stock :
             # below statement need to return a message saying no more available
             return redirect(redirect_url)
         else:
@@ -27,5 +25,4 @@ def add_to_bag(request, item_id):
     else:
         bag[item_id] = quantity
     request.session['bag'] = bag
-    print(request.session['bag'])
     return redirect(redirect_url)
