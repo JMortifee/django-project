@@ -28,7 +28,7 @@ SECRET_KEY = 'django-insecure-5jlgu%v^&6+e+sdlx)dpc*=gm!10hj8q7l%#a9lkcfi773!$5)
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['nlsart.herokuapp.com', 'localhost']
 
 
 # Application definition
@@ -122,12 +122,22 @@ WSGI_APPLICATION = 'django_nlsart.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/3.2/ref/settings/#databases
 
-DATABASES = {
+if 'DATABASE_URL' in os.environ:
+    DATABASES = {
+    'default' : dj_database_url.parse('postgres://mxzwffghsuivyr:b59f3b66ba25dcf1032996255c704d0ecd59b727c762eaa1bd1bef98f139485e@ec2-99-80-200-225.eu-west-1.compute.amazonaws.com:5432/dduo195volgvha')
+}
+else:
+    DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.sqlite3',
         'NAME': BASE_DIR / 'db.sqlite3',
     }
 }
+
+
+    
+
+
 
 
 # Password validation
