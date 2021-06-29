@@ -1,1 +1,1 @@
-web: gunicorn sjango_nlsart.wsgi:application
+web: gunicorn django_nlsart.wsgi:application
