@@ -8,40 +8,38 @@
 5. [Testing](#testing)
 6. [Deployment](#deployment)
 7. [Credits](#credits)
-8. <a href="https://kujoskombucha.herokuapp.com" target="_blank">Site</a>
+8. <a href="https://nlsart.herokuapp.com" target="_blank">Site</a>
 
 ## Introduction <a name="intro"></a>
-For this project, I have decided to develop a website for a recipe and community site for kombucha home brewers. The overall goal of the project will be to create an attractive and intuitive website that is easy to use for community members to visit and share their recipe ideas.
-
-The website will have an account creation function so that you can create edit and delete recipes for other users to view and tryout.
+For this project, I have decided to develop a website for an artist so that potential clients can learn about the artist and purchase works via the e-commerce website. The goal of this project will be to create an attractive and intuitive website. It will give potential customers an interesting and easy experience while being able to contact the artist, and purchase their art.
 
 ## UX <a name="UX"></a>
 
-This website will be viewed by community members who are both knowledgable, and completely new to the kombucha process. To ensure both parties, and all of those in between, have a positive emotional reaction to the site, the information must be informative without being jargon-filled. Images will be placed in each section to inform the user, at a glance what the section is about.
+This website will be visited by users who already know in the artist, as well as those who would like to learn about the artist. To ensure both parties, and all of those in between, have a positive emotional reaction to the site, the information must be informative without being jargon-filled. Images will be placed in each section to inform the user, at a glance what the section is about.
 
 ### User Stories
 
 Below are four user stories that have been extrapolated out of 2 epics:
 
-#### Epic 1: Users want to be able to learn about what kombucha is and how to make it as well as community support in creating their own kombucha at home.
+#### Epic 1: Users want to be able to learn about the artist and their inspirations and processes.
 
-__User story 1:__ The user wants to find out how to make kombucha.
+__User story 1:__ The user wants to learn about the artist's background.
 
-__Solution to user story 1:__ When the user loads the website the landing page will display a friendly fluffy character that says he is going to teach the user how to make kombucha.
+__Solution to user story 1:__ When the user loads the website, an about/ home page is rendered. This contains the background information and life history of the artist.
 
-__User story 2:__ Once the user has read through the information about how to make kombucha they may want to view some recipes to try out for themselves.
+__User story 2:__ Once the user has read through the information about the artist, they will then want to see more of their work.
 
-__Solution for user story 2:__  at the end of the get started page there is a button that directs the user to the community recipes page that are all created by other users.
+__Solution for user story 2:__ At the end of the about section, there will be a button that directs the user to the artist's portfolio.
 
-#### Epic 2: Existing community members or users who have been to the site before can log in and interact with thier own, as well as othe rcommunity members recipes.
+#### Epic 2: People who are already aware of the artist but would like to purchase some work or contact them for a commission.
 
-__User story 3:__ The user knows how to make kombucha but just wants to log in to update or create a new recipe they have come up with.
+__User story 3:__ The user wants to log in and see if any new work has been uploaded to the shop.
 
-__Solution for user story 3:__  In the navbar there will be a login button that existing users can click to imediatly direct them towards logging in to their account.
+__Solution for user story 3:__  In the navbar there will be a portfolio button. this is so that the user does not need to scroll to the bottom of the page to find the portfolio button. This link will take them to a year's page where they can select the year of the artist's work they would like to view, or an all button that calls all years. The next view rendered will be a media template where they can filter what type of work they would like to view, as well as a view all button.
 
-__User story 4:__ The User just wants to see if there have been any new recipes added to the page.
+__User story 4:__ The User wants to get in contact with the artist to commission a piece of art.
 
-__Solution to user story 4:__ In the nav bar there will be a button that directs the user straight to the recipe page where they can see if any new recpes have been added.
+__Solution to user story 4:__ In the page's footer will be all of the information required to get in contact.
 
 ## Features <a name="features"></a>
 
@@ -49,33 +47,33 @@ __Solution to user story 4:__ In the nav bar there will be a button that directs
 
 __Navbar:__ The navbar is used to easily navigate between the pages of the site, by selecting which page the user wants.
 
-__Landing Images and Button:__ The landing page gives the user a breif but descriptive paragraph about the website and directs the user to the next section.
+__Landing Images and Button:__ The landing page gives the user a brief but descriptive paragraph about the artist and directs the user to the next section.
 
-__Recipes Page:__ The recipes page gives a first time or one off user access to community created recipes to use as research or try out for themselves giving them a taste of the website and its community without having to sign up.
+__Portfolio Page:__ The portfolio page gives users access to view all of the artwork available to purchase.
 
-__Individual Recipe Page:__ The individual recipe page allows the user to view the ingredients and the steps required to make the recipeat home. The url routing allows for the user so save the recipe as a favorite on their browser so that they can revisit the recipe, as long as the recipe name hasn't been changed or the recipe deleted. 
+__Product Detail Page:__ The product detail page allows the user to read more about the product, view a larger image of the product, and add it to the cart if there are any in stock.
 
-__Sign Up:__ A user who wants to interact with the community or share their recipe ideas can create an account the user needs to provide a unique username, email and password to create an account.
+__Bag Page:__ 
 
-__Log In:__ An existing user can log in using their username and password to imediatly access the member only content.
+__Sign Up:__ A user who is likely to return and possibly purchase more can sign up using a unique username, email, and password to create an account. The authentication and security of this feature is handled by Allauth. The users can also save their default billing information for a faster checkout in the future.
 
-__Profile Page:__ when the user has created an account or logged in they will be directed to their own profile page. this page is where they can create, edit and delete their recipes. trying to render this page without logging in will direct the user to the login page.
+__Log In:__ An existing user can log in using their username and password to immediately access their order history.
 
-__Recipe Creation:__ Once logged in the user will see the create recipe button on their profile, once clicked they will be directed to the recipe creation page where they can add a name, ingredients, and a method for the recipe. once submited the recipe will be posted to the database along with a fourth field of the authors unique username. This will be displayed on the recipe screen along with the recipe name giving credit to the author.
+__Profile Page:__ When the user has created an account or logged in, they will be directed to their profile page. This page is where they can view their order history and default payment information. Trying to render this page without logging in will direct the user to the login page.
 
-__Recipe Edit Page:__ If a user would like to edit their recipes they can easily click edit recipe. this will take them to a page similar to the recipe creation page however it will load into the fields the values they entered when creating this. if the user changes their mind they can cancel the edit and go back to thier profile page, but if the click on submit the changed fields will be updated in the database.
+__Superuser:__ Within the Django framework, users can be set to staff or "Superusers". allowing us to create product management views within the website without having to go into the Django admin.
 
-__Recipe Delete Button:__ if the user is not happy with their recipe and would like to remove it from the site they can easily click on the delete button removing their recipe permanently from the database.
+__Add Product:__ Once the superuser has logged in, the user will see the product management link in the profile dropdown menu. Once clicked the add product page will be rendered. This page will have a form that can be filled in to add a new object, with all of the fields required to render it in the products template. The superuser can then either cancel the product creation or upload it to the database via clearly labeled buttons.
+
+__Edit Product:__ If the superuser is logged in, the user will see the edit and delete buttons on every product that is rendered in the product's view. Selecting edit will render the edit product page. This renders a form with the fields already completed from the products database model. These fields can be edited to add or remove information. There will also be cancel and submit buttons at the bottom of the form.
+
+__Recipe Delete Button:__ The delete button will take the product's id and delete the object from the database with that id.
 
 ### Features Left to Implement
 
-__Recipe Comments/ Rating:__ I would have liked to implement a comments section under each recipe so that the author or other users could read about how good/ easy the recipe was to do at home. A rating system may have been easier to implement but not with my current knowledge and time.
+__Reviews and Ratings:__ I would have liked to implement a page consisting of customer reviews of the artwork they received. A rating system may have been easier to implement but not with my current knowledge and time.
 
-__Blog/ Chat Area:__ I would have liked to have an area on the site wher new and existing users could ask other community members questions about the subject. I felt this was not possible for me to implement at this time.
-
-__Emails to Users:__ I would have liked to set up an email system with users hence the sign up requiring an email address. This was so that I could send newsletters and updates to current users directly as well as allow users who forgot their account details to retrieve them via a secure location.
-
-__User Profile Pictures:__ user profile pictures would allow community members to have a face to the name making the site feel more like a community. I didnt implement this because I didnt want lots of images to use all of the space on my database.
+__Upcoming Events:__ I would have liked to have an area on the site where users could see if the artist had any upcoming shows or exhibitions.
 
 ## Technologies <a name="tech"></a>
 ### HTML5
@@ -84,10 +82,7 @@ I Used HTML5 because it is the best language for creating static webpages to be 
 ### CSS3
 I Used CSS3 because it is the best language for styling HTML5 webpages
 
-### Materialize
-I used Materialize because it uses CSS3 to implement styles into HTML documents via class names. This greatly increases the speed in which a webpage can be generated without having to style every single element on the page. The CSS code can then be overwritten by a custom CSS file or inline styling.
-
-<a href="https://materializecss.com/getting-started.html" target="_blank">Here is a link to the Materialize website</a>
+### Bootstrap4
 
 ### Fontawesome
 I used Font Awesome because it has a lot of aesthetically pleasing icons that can be easily implemented with a quick copy and paste. they can turn a webpage from being just lines of text to a more interesting minimalist style with small simplistic images to enhance the text.
@@ -95,68 +90,91 @@ I used Font Awesome because it has a lot of aesthetically pleasing icons that ca
 <a href="https://fontawesome.com/" target="_blank">Here is a link to the Fontawesome website</a>
 
 ### Google Fonts
-I used Google fonts because it is a great way to implement different fonts into an HTML document with very little effort.
+I used Google fonts because it is a great way to implement different fonts into an HTML document with ease.
 
 <a href="https://fonts.google.com/" target="_blank">Here is a link to the Google Fonts website</a>
 
 ### Javascript
-I used javascript because it is a great tool for accessing and manipulating HTML. Linked with jQuery javascript adds great functionality to sites with relativey easy code.
+I used javascript because it is a tool for accessing and manipulating HTML. Linked with jQuery javascript allows you to implement complex functionality.
 
 <a href="https://www.javascript.com/" target="_blank">Here is a link to the Javascript website</a>
 
 ### jQuery
-I used jQuery because it allows you to very easily and quickly write javascript that implements interactivity into a site by easily creating event listener functions.
+I used jQuery because it allows you to write javascript that implements interactivity into a site by easily creating event listener functions.
 
 <a href="https://jquery.com/" target="_blank">Here is a link to the jQuery website</a>
 
 ### Python
-I used Python because it works great with SQL and NoSQL databases CRUD funtionality and has lots of libraries such as Flask and PyMongo to make these processes easier to implement.
+I used Python because it works with SQL and NoSQL databases CRUD functionality and has many libraries such as Django, and Allauth which have been used extensively across the project.
 
 <a href="https://www.python.org/download/releases/3.0/" target="_blank">Here is a link to the Python website</a>
 
-### MONGO DB
-I used Mongo DB because I felt its NoSQL structure complemented the type of information I was going to be storing on the database.
+### Djando
+I used Django for this project because it allows you to create robust, complex and scalable apps quickly.
 
-<a href="https://www.mongodb.com/cloud/atlas/lp/try2?utm_source=google&utm_campaign=gs_emea_united_kingdom_search_core_brand_atlas_desktop&utm_term=mongo%20db&utm_medium=cpc_paid_search&utm_ad=e&utm_ad_campaign_id=12212624581&gclid=EAIaIQobChMIoZrj5pf57wIV4-jtCh0p-AF8EAAYASAAEgJyB_D_BwE" target="_blank">Here is a link to the Mongo DB website</a>
+### AWS
+AWS was used to host the static files so that Heroku didnt have to do all of the hard work loading in the large amount of images.
 
-### PyMongo
-I used the PyMongo library in my project because it allowed me to very easily write CRUD operations in my python app.
-
-<a href="https://pymongo.readthedocs.io/" target="_blank">Here is a link to the PyMongo website</a>
-
-### Flask
-I used Flask because it allowed me to create a mini framework for my site by using methods in my code such as templates and password hashing by combining other libraries such as jinja and Werkzueg. 
-
-<a href="https://flask.palletsprojects.com/en/1.1.x/" target="_blank">Here is a link to the Flask website</a>
-<a href="https://jinja.palletsprojects.com/en/2.11.x/" target="_blank">Here is a link to the Jinja website</a>
-<a href="https://werkzeug.palletsprojects.com/" target="_blank">Here is a link to the Werkzueg website</a>
+### Heroku
+I used Heroku to deploy this app because it is simple to use and allows you to host a whole framework rather than just a static page.
 
 ## Testing <a name="testing"></a>
 
 ### Code Validation
-I started by running my files through the HTML and CSS validator service provided by W3C to ensure there were no coding issues.
+I started by running my files through the HTML and CSS validator service provided by W3C to ensure there weren't any coding issues.
 
-I then manualy tested all of the links and CRUD operations to check they worked correctly. 
+I then manually tested all of the links and CRUD operations to check they worked correctly. 
 
-I then roped some family and friends into creating an account and some recipes and deleting them to ensure that the operations didn't ever break or return errors.
+I then ensured all of the bag and checkout functionality was working by using stripe's test payment method.
 
 ### Responsivity
-Because I used Materialize, it's built in, mobile first, design allowed me to create a site that only needed a few adjustments for the site to work well on mobile and tablet devices. 
+Because I used Bootstrap, with it's built-in mobile-first design, it allowed me to create a site that minimal CSS for the site to work well on mobile and tablet devices.
 
 ## Deployment <a name="deployment"></a>
 
-I used heroku to deploy my project as git hub pages who I had previously used only allows for static sites.
+### Deployment Process
+This deployment process was quite complex due to the use of AWS to host the static and media files.
 
-Deploying to heroku was very simple and painless I linked my git hub repository to the app on heroku so that it would automatically update any changes I commited.
+#### 1. I used pip3 to install dj_database_url, psycopg2, and gunicorn. these packages are required to deploy a Django app to Heroku.
 
-To deploy I needed a requirements.txt file so that heroku knew what libararies the project needed to run. As well as a procfile to specify the type of app and the app file name and language.
+####2. created an if statement in the settings.py file at the project level to determine what database to use depending on certain environment variables.
 
-After doing this I pressed deploy and the app was deployed to the site.
+####3. Then create a Procfile to pass to Heroku the type of app and where to run it from. For this app it required:
+	web: gunicorn django_nlsart.wsgi:application
+
+####4. I then created the app on the Heroku dashboard and passes in the config var:
+	DISABLE_COLLECTSTATIC = 1
+This stops Heroku from deploying the static files so that we can host them with AWS later.
+During this phase, we also used the database plugin Postgres. Then created config vars for a secret key and a database key.
+
+####5. In the created app dashboard I the selected deploy from Github repo. searched for the repo I wanted to deploy, enabled auto-deploy so that it would redeploy every time that I pushed to git, and then ran the deployment.
+
+####6. The next step was to link AWS S3 to this project so that it could host the static and media files for the project. 
+
+Once I had signed up, I created an S3 bucket, allowing public access and enabling static web hosting.
+
+####7. I then proceeded to generate a bucket policy using the built-in generator, passing in my 'arn' key.
+
+This Policy is then copied and pasted into the bucket policy editor. I added '/*' to the end of the resource to allow access to all resources in the bucket. I then pressed save.
+
+####8. The next step is to create an IAM group to access the S3 resources.
+
+To do this I navigated to the IAM section of AWS and clicked on create a group. I then added the policies for my S3 bucket so that the group has full access to just this bucket. Then created a user within that group to manage the bucket. 
+
+####9. I received a .csv file containing my secret keys to link to my bucket from Heroku. I created some config vars so that these keys would remain hidden. Then linked them to the database in settings.py
+
+####10. I then created a custom storage file to define where static and media files will be stored.
+
+####11. Then in settings.py I created a link to the custom storage file that I just created.
+
+####12. I then Overrode the static and media URLs so that they would send and receive from the files stored in the S3 bucket.
+
+####13. I then pushed all of my changes to git so that Heroku would redeploy with the updated information.
+
+
 
 ## Credits <a name="credits"></a>
 
-##### Home
+All of the art on the site was created by Natalie Lauren Smith.
 
-All of the art on the site was created by me and Natalie Lauren Smith.
-
-Click <a href="https://kujoskombucha.herokuapp.com" target="_blank">here</a> to view the site.
+Click <a href="https://nlsart.herokuapp.com" target="_blank">here</a> to view the site.
