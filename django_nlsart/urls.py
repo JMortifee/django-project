@@ -1,6 +1,7 @@
 """django_nlsart URL Configuration
 
-The `urlpatterns` list routes URLs to views. For more information please see:
+The `urlpatterns` list routes URLs to views. 
+For more information please see:
     https://docs.djangoproject.com/en/3.2/topics/http/urls/
 Examples:
 Function views
@@ -26,4 +27,5 @@ urlpatterns = [
     path('bag/', include('bag.urls')),
     path('checkout/', include('checkout.urls')),
     path('profile/', include('profiles.urls')),
-] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
+] + static(settings.MEDIA_URL, 
+document_root=settings.MEDIA_ROOT)

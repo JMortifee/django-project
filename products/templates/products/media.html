@@ -5,43 +5,48 @@
     <div class="overlay"></div>
     <div class="container-fluid mt-5">
         <div class="row">
-            <div class="product-container col-10 offset-1">
-                <div class="row mt-1 mb-2"></div>
+            <div class="product-container col-10 offset-1 col-xl-6 offset-xl-3">
                 <div class="row">
-                        <div class="col-sm-12 col-md-4">
-                            <div class="card h-100 border-0">
-                                <a href="{% url 'products' %}?category=paintings&{{ request.GET.urlencode }}">
-                                    <img class="card-img-top img-fluid" src="{{ MEDIA_URL }}DSCF3037.jpg" alt="{{ product.name }}">
-                                </a>
-                                <div class="card-body pb-0 mb-0">
-                                    <p class="">Paintings</p>
-                                </div>
+                    <div class="col-sm-12 col-md-4">
+                        <div class="card h-100 border-0">
+                            <a href="{% url 'products' %}?category=paintings&{{ request.GET.urlencode }}">
+                                <img class="card-img-top img-fluid" 
+                                src="{{ MEDIA_URL }}paint.jpg" alt="paint">
+                            </a>
+                            <div class="card-body pb-0 mb-0">
+                                <p class="">Paintings</p>
                             </div>
                         </div>
-                        <div class="col-sm-12 col-md-4">
-                            <div class="card h-100 border-0">
-                                <a href="{% url 'products' %}?category=prints&{{ request.GET.urlencode }}">
-                                    <img class="card-img-top img-fluid" src="{{ MEDIA_URL }}DSCF3037.jpg" alt="{{ product.name }}">
-                                </a>
-                                <div class="card-body pb-0 mb-0">
-                                    <p class="">Prints</p>
-                                </div>
+                    </div>
+                    <div class="col-sm-12 col-md-4">
+                        <div class="card h-100 border-0">
+                            <a href="{% url 'products' %}?category=prints&{{ request.GET.urlencode }}">
+                                <img class="card-img-top img-fluid" 
+                                src="{{ MEDIA_URL }}print.jpg" alt="print">
+                            </a>
+                            <div class="card-body pb-0 mb-0">
+                                <p class="">Prints</p>
                             </div>
                         </div>
-                        <div class="col-sm-12 col-md-4">
-                            <div class="card h-100 border-0">
-                                <a href="{% url 'products' %}?category=drawings&{{ request.GET.urlencode }}">
-                                    <img class="card-img-top img-fluid" src="{{ MEDIA_URL }}DSCF3037.jpg" alt="{{ product.name }}">
-                                </a>
-                                <div class="card-body pb-0 mb-0">
-                                    <p class="">Drawings</p>
-                                </div>
+                    </div>
+                    <div class="col-sm-12 col-md-4">
+                        <div class="card h-100 border-0">
+                            <a href="{% url 'products' %}?category=drawings&{{ request.GET.urlencode }}">
+                                <img class="card-img-top img-fluid" 
+                                src="{{ MEDIA_URL }}drawing.jpg" alt="drawing">
+                            </a>
+                            <div class="card-body pb-0 mb-0">
+                                <p class="">Drawings</p>
                             </div>
                         </div>
+                    </div>
                 </div>
             </div>
-            <div class="col-sm-6 col-md-4 col-lg-2 offset-sm-3 offset-md-4 offset-lg-5 pb-5 text-center"><a href="{% url 'products' %}?category=drawings,paintings,prints&{{ request.GET.urlencode }}" class="btn btn-black rounded-0">View all Work</a>
+            <div class="col-sm-6 col-md-4 col-lg-2 offset-sm-3 offset-md-4 offset-lg-5 pb-5 text-center">
+                <a href="{% url 'products' %}?category=drawings,paintings,prints&{{ request.GET.urlencode }}" 
+                class="btn btn-black rounded-0">View all Work</a>
             </div>
         </div>
+    </div>
 
 {% endblock %}

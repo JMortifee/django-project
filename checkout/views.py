@@ -13,6 +13,7 @@ from bag.contexts import bag_contents
 import stripe
 import json
 
+
 @require_POST
 def cache_checkout_data(request):
     try:
@@ -101,7 +102,6 @@ def checkout(request):
             amount=stripe_total,
             currency=settings.STRIPE_CURRENCY,
         )
-
         if request.user.is_authenticated:
             try:
                 profile = UserProfile.objects.get(user=request.user)
@@ -131,9 +131,7 @@ def checkout(request):
         'stripe_public_key': stripe_public_key,
         'client_secret': intent.client_secret,
     }
-
     return render(request, template, context)
-
 
 
 def checkout_success(request, order_number):
@@ -148,7 +146,6 @@ def checkout_success(request, order_number):
         # Attach the user's profile to the order
         order.user_profile = profile
         order.save()
-
         # Save the user's info
         if save_info:
             profile_data = {
@@ -175,5 +172,4 @@ def checkout_success(request, order_number):
     context = {
         'order': order,
     }
-
     return render(request, template, context)

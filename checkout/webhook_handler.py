@@ -33,6 +33,7 @@ class StripeWH_Handler:
             [cust_email]
         )
 
+
     def handle_event(self, event):
         """
         Handle a generic/unknown/unexpected webhook event
@@ -40,6 +41,7 @@ class StripeWH_Handler:
         return HttpResponse(
             content=f'Unhandled webhook received: {event["type"]}',
             status=200)
+
 
     def handle_payment_intent_succeeded(self, event):
         """
@@ -147,6 +149,7 @@ class StripeWH_Handler:
         return HttpResponse(
             content=f'Webhook received: {event["type"]} | SUCCESS: Created order in webhook',
             status=200)
+
 
     def handle_payment_intent_payment_failed(self, event):
         """

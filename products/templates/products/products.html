@@ -5,37 +5,47 @@
     <div class="overlay"></div>
     <div class="container-fluid mt-5">
         <div class="row">
-            <div class="product-container col-10 offset-1">
-                <div class="row">
+            {% if  date %}
+            <div class="product-container col-10 offset-1 col-xl-6 offset-xl-3">
+                <div class="row">    
                     {% for product in date %}
-                        <div class=" col-sm-12 col-md-6 ">
-                            <div class="card h-100 border-0">
-                                {% if product.image %}
-                                    <a href="{% url 'product_detail' product.id %}">
-                                        <img class="card-img-top img-fluid" src="{{ MEDIA_URL }}{{ product.image }}" alt="{{ product.name }}">
-                                    </a>
-                                {% else %}
-                                    <a href="">
-                                    <img class="card-img-top img-fluid" src="{{ MEDIA_URL }}noimage.png" alt="{{ product.name }}">
-                                    </a>
-                                {% endif %}
-                                <div class="card-body pb-0">
-                                    <p class="mb-0">{{ product.name }}</p>
-                                    <p class="mb-0 text-muted">{{ product.date }}</p>
-                                    <p class="mb-0 text-muted">{{ product.description }}</p>
-                                    <p class="text-muted">{{ product.width }}mm x {{ product.height }}mm</p>
+                            <div class=" col-sm-12 col-md-6 ">
+                                <div class="card h-100 border-0">
+                                    {% if product.image %}
+                                        <a href="{% url 'product_detail' product.id %}">
+                                            <img class="card-img-top img-fluid" 
+                                            src="{{ MEDIA_URL }}{{ product.image }}" 
+                                            alt="{{ product.name }}">
+                                        </a>
+                                    {% else %}
+                                        <a href="">
+                                        <img class="card-img-top img-fluid" 
+                                        src="{{ MEDIA_URL }}noimage.png" 
+                                        alt="{{ product.name }}">
+                                        </a>
+                                    {% endif %}
+                                    <div class="card-body pb-0">
+                                        <p class="mb-0">{{ product.name }}</p>
+                                        <p class="mb-0 text-muted">
+                                            {{ product.date }}</p>
+                                        <p class="mb-0 text-muted">
+                                            {{ product.description }}</p>
+                                        <p class="text-muted">
+                                            {{ product.width }}mm x {{ product.height }}mm</p>
+                                    </div>
+                                    {% if request.user.is_superuser %}
+                                    <small class="ml-3">
+                                        <a href="{% url 'edit_product' product.id %}">
+                                            Edit</a>
+                                        <a class="text-danger"
+                                         href="{% url 'delete_product' product.id %}">Delete</a>
+                                    </small>
+                                    {% endif %}
                                 </div>
-                                {% if request.user.is_superuser %}
-                                <small class="ml-3">
-                                    <a href="{% url 'edit_product' product.id %}">Edit</a>
-                                    <a class="text-danger" href="{% url 'delete_product' product.id %}">Delete</a>
-                                </small>
-                                {% endif %}
+                                
                             </div>
                             
-                        </div>
-                        
-                    {% endfor %}
+                        {% endfor %}
                     
                     <div class="btt-link btt-button shadow-sm rounded-0 border border-black">
                         <a class="btt-link d-flex h-100">
@@ -44,6 +54,15 @@
                     </div>
                 </div>
             </div>
+            {% else %}
+                <div class=" col-sm-12 text-center">
+                    <h4>We are sorry. There aren't currently any works for sale in this category</h4>
+                    <div class=" text-center mt-5">
+                        <a href="{% url 'products' %}?category=paintings,prints,drawings&date=2017,2018,2019,2020,2021" class="btn btn-black rounded-0">View all works</a>
+                    </div>
+                    
+                </div>
+            {% endif %}
         </div>
     </div>
     <div class="btt-button shadow-sm rounded-0 border border-black">

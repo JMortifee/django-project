@@ -7,7 +7,8 @@ class Category(models.Model):
         verbose_name_plural = 'Categories'
         
     name = models.CharField(max_length=254)
-    friendly_name = models.CharField(max_length=254, null=True, blank=True)
+    friendly_name = models.CharField(max_length=254, 
+    null=True, blank=True)
 
     def __str__(self):
         return self.name
@@ -17,15 +18,21 @@ class Category(models.Model):
 
 
 class Product(models.Model):
-    category = models.ForeignKey('Category', null=True, blank=True, on_delete=models.SET_NULL)
+    category = models.ForeignKey('Category',
+    null=True, blank=True, on_delete=models.SET_NULL)
     name = models.CharField(max_length=254)
     description = models.TextField()
-    date = models.DecimalField(max_digits=4, decimal_places=0)
-    price = models.DecimalField(max_digits=6, decimal_places=2)
-    width = models.DecimalField(max_digits=6, decimal_places=0)
-    height = models.DecimalField(max_digits=6, decimal_places=0)
+    date = models.DecimalField(max_digits=4, 
+    decimal_places=0)
+    price = models.DecimalField(max_digits=6, 
+    decimal_places=2)
+    width = models.DecimalField(max_digits=6, 
+    decimal_places=0)
+    height = models.DecimalField(max_digits=6, 
+    decimal_places=0)
     image = models.ImageField(null=True, blank=True)
-    quantity = models.DecimalField(max_digits=6, decimal_places=0)
+    quantity = models.DecimalField(max_digits=6, 
+    decimal_places=0)
 
     def __str__(self):
         return self.name

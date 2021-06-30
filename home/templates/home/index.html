@@ -2,8 +2,90 @@
 {% load static %} 
 
 {% block content %} 
-    <div class="overlay"></div>
+    
+<div class="row ">
+    <div class="col-12 col-md-6 jumbotron-a">
+    </div>
+    <div class="col-12 col-md-6 jumbotron-b">
+    </div>
+</div>
 
-<h1> hello </h1>
+<div class="row">
+    <div class="product-container col-10 offset-1 
+    col-xl-6 offset-xl-3 mt-5 mb-5 ">
+        <h3 class="home-title text-center">About Me</h3>
+        <p>I am a secondary school art teacher, 
+            printmaker and painter. I studied Drawing 
+            and Print at the University of the West of 
+            England UWE. Originally from Burton on Trent, 
+            Staffordshire I moved to Bristol in 2016 for University.
+            My focus lies with monochromatic portraits in 
+            the disciplines of painting, drawing and relief printing. 
+            Recently I have been using more colours in my 
+            paintings all of which are created using the zorn pallete.
+            I work on sizes from A5 to 4ft by 4ft and have 
+            ambition to work larger. 
+        </p>
+    </div>
+    <div class="product-container col-10 offset-1 col-xl-6 
+    offset-xl-3 mt-5 mb-5 text-center">
+        <h3 class="home-title">Print Making</h3>
+        <div class="row">
+            <div class="col-sm-12 col-md-4 home-a">
+                <div class="card h-100 border-0">
+                    <img src="{{ MEDIA_URL }}DSCF3037.JPG">
+                </div>
+            </div>
+            <div class="col-sm-12 col-md-4 home-b">
+                <div class="card h-100 border-0">
+                    <img src="{{ MEDIA_URL }}DSCF3037.JPG">
+                </div>
+            </div>
+            <div class="col-sm-12 col-md-4 home-b">
+                <div class="card h-100 border-0">
+                    <img src="{{ MEDIA_URL }}DSCF3037.JPG">
+                </div>
+            </div>
+        </div>
+    </div>
+    <hr>
+    <div class="product-container col-10 offset-1 col-xl-6
+     offset-xl-3 mt-5 mb-5 text-center">
+        <h3 class="home-title">Painting</h3>
+        <div class="row">
+            <div class="col-sm-12 col-md-4 home-a">
+                <div class="card h-100 border-0">
+                    <img src="{{ MEDIA_URL }}DSCF3037.JPG">
+                </div>
+            </div>
+            <div class="col-sm-12 col-md-4 home-b">
+                <div class="card h-100 border-0">
+                    <img src="{{ MEDIA_URL }}DSCF3037.JPG">
+                </div>
+            </div>
+            <div class="col-sm-12 col-md-4 home-b">
+                <div class="card h-100 border-0">
+                    <img src="{{ MEDIA_URL }}DSCF3037.JPG">
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="product-container col-10 offset-1 col-xl-6 
+    offset-xl-3 mt-5 mb-5">
+        <iframe class="yt-vid" width="100%" height="500" 
+        src="https://www.youtube.com/embed/8IRcYyDJqek" 
+        title="YouTube video player" frameborder="0" 
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; 
+        gyroscope; picture-in-picture" allowfullscreen></iframe>
+        
+    </div>
+
+    <div class="col-sm-6 col-md-4 col-lg-2 offset-sm-3 offset-md-4 
+    offset-lg-5 pb-5 text-center"><a href="{% url 'portfolio_years' %}" 
+    class="btn btn-black rounded-0">View Portfolio</a>
+    </div>
+</div>
+
+</div>
 
 {% endblock %}
