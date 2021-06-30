@@ -172,6 +172,11 @@ To do this I navigated to the IAM section of AWS and clicked on create a group. 
 ####13. I then pushed all of my changes to git so that Heroku would redeploy with the updated information.
 
 
+## Bugs
+
+AWS media file would not load all of my images onto the site which is really frustrating as they are what give the home page its clean and nice aesthetic.
+
+I have spent a long time trying to work out how to handle multiple categories in the URL parameters as well as creating functionality around the quantity value of the products in the datbase, which meant that i ran out of time in the end.
 
 ## Credits <a name="credits"></a>
 
