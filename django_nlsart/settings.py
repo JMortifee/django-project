@@ -28,7 +28,7 @@ SECRET_KEY = os.environ.get('SECRET_KEY', '')
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = 'DEVELOPMENT' in os.environ
 
-ALLOWED_HOSTS = ['nlsart.herokuapp.com', 'localhost']
+ALLOWED_HOSTS = ['nlsart.herokuapp.com', 'localhost', '127.0.0.1:8000']
 
 
 # Application definition
@@ -134,13 +134,6 @@ else:
         'NAME': BASE_DIR / 'db.sqlite3',
     }
 }
-
-
-    
-
-
-
-
 # Password validation
 # https://docs.djangoproject.com/en/3.2/ref/settings/#auth-password-validators
 
@@ -224,7 +217,7 @@ STRIPE_WH_SECRET = os.environ.get('STRIPE_WH_SECRET', '')
 
 if 'DEVELOPMENT' in os.environ:
     EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
-    DEFAULT_FROM_EMAIL = 'nlsart@example.co.uk'
+    DEFAULT_FROM_EMAIL = 'nlsart@example.com'
 else:
     EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
     EMAIL_USE_TLS = True
